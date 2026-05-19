@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Noto+Sans:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  /* Default Color Palette (Hospitality) */
+  --color-primary: #1E3A8A; /* Luxury Navy */
+  --color-primary-light: #3B82F6; /* Bright Blue */
+  --color-secondary: #0F172A; /* Deep Slate */
+  --color-accent: #A16207; /* Gold / Bronze */
+  --color-background: #F8FAFC; /* Soft Ice White */
+  --color-surface: #FFFFFF;
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --color-border: #E2E8F0;
+  
+  /* Default Typography (Modern Geometric) */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Shadows: Cinematic Depth */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 40px rgba(0, 0, 0, 0.15);
+
+  /* Border Radius */
+  --radius-md: 16px;
+  --radius-lg: 32px;
+  --radius-xl: 48px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-slow: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   THEMES: COLORS 
+   ============================================================ */
+
+/* 1. Hospitality (Navy & Gold) */
+[data-color="hospitality"] {
+  --color-primary: #1E3A8A;
+  --color-primary-light: #3B82F6;
+  --color-secondary: #0F172A;
+  --color-accent: #A16207;
+  --color-background: #F8FAFC;
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --shadow-glow: 0 0 40px rgba(161, 98, 7, 0.2);
+}
+
+/* 2. Clinical Trust (Cyan & Green) */
+[data-color="clinical"] {
+  --color-primary: #0891B2;
+  --color-primary-light: #22D3EE;
+  --color-secondary: #164E63;
+  --color-accent: #059669;
+  --color-background: #F0FDFB;
+  --color-text-main: #164E63;
+  --color-text-muted: #334155;
+  --shadow-glow: 0 0 40px rgba(5, 150, 105, 0.2);
+}
+
+/* 3. Deep Minimalist (Charcoal & Soft Gold) */
+[data-color="minimalist"] {
+  --color-primary: #1C1917;
+  --color-primary-light: #44403C;
+  --color-secondary: #292524;
+  --color-accent: #B45309;
+  --color-background: #FAFAF9;
+  --color-text-main: #0C0A09;
+  --color-text-muted: #57534E;
+  --shadow-glow: 0 0 40px rgba(180, 83, 9, 0.2);
+}
+
+/* 4. Natural Wellness (Sage & Sand) */
+[data-color="wellness"] {
+  --color-primary: #415D43;
+  --color-primary-light: #709775;
+  --color-secondary: #2D402E;
+  --color-accent: #B38E5D;
+  --color-background: #F9F8F6;
+  --color-text-main: #2D402E;
+  --color-text-muted: #5C6E5E;
+  --shadow-glow: 0 0 40px rgba(179, 142, 93, 0.2);
+}
+
+/* ============================================================
+   THEMES: TYPOGRAPHY 
+   ============================================================ */
+
+/* 1. Geometric Modern (Outfit + Work Sans) */
+[data-font="modern"] {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+}
+
+/* 2. Editorial Classic (Cormorant Garamond + Libre Baskerville) */
+[data-font="luxury"] {
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Libre Baskerville', serif;
+}
+
+/* 3. Medical Clean (Figtree + Noto Sans) */
+[data-font="clean"] {
+  --font-heading: 'Figtree', sans-serif;
+  --font-body: 'Noto Sans', sans-serif;
+}
+
+/* 4. Professional Authority (EB Garamond + Lato) */
+[data-font="trust"] {
+  --font-heading: 'EB Garamond', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-image: radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.02) 0%, transparent 70%);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--color-primary);
+  transition: color 0.5s ease;
+}
+
+h1 { font-size: clamp(3rem, 6vw, 5.5rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.01em; }
+h3 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+
+p {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  max-width: 65ch;
+  transition: color 0.5s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utilities */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+  position: relative;
+}
+
+.text-center { text-align: center; }
+.text-muted { color: var(--color-text-muted); }
+
+/* Buttons: Luxury Style */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 2.5rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: var(--transition-slow);
+  border: none;
+  gap: 0.75rem;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn:hover::after {
+  transform: translateX(100%);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Liquid Glass Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes liquidFloat {
+  0% { transform: translateY(0) scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  50% { transform: translateY(-10px) scale(1.02); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  100% { transform: translateY(0) scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }

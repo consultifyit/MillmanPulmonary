@@ -1,0 +1,208 @@
+.testimonials-section {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10rem 0;
+  position: relative;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 100% 100%, rgba(161, 98, 7, 0.2) 0%, transparent 50%);
+}
+
+.testimonials-section .section-title {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonials-section .section-subtitle {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.25rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-slow);
+}
+
+.testimonial-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.testimonial-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-5px);
+}
+
+.testimonial-card:hover::after {
+  transform: scaleX(1);
+}
+
+.google-reviews-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2.5rem;
+  border-radius: var(--radius-lg);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.google-score-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.google-g {
+  font-family: 'Product Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #fff;
+  background: conic-gradient(from 180deg at 50% 50%, #EA4335 0deg, #FBBC05 90deg, #34A853 180deg, #4285F4 270deg, #EA4335 360deg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.google-score {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  font-family: var(--font-heading);
+}
+
+.google-stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.google-count {
+  color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.google-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary-light);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+  font-family: var(--font-heading);
+}
+
+.reviewer-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-time {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+}
+
+.google-icon-small {
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.google-cta-btn {
+  border-color: rgba(255,255,255,0.2) !important;
+  color: white !important;
+}
+
+.google-cta-btn:hover {
+  background-color: white !important;
+  color: var(--color-primary) !important;
+}
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.quote {
+  color: white;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  flex-grow: 1;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonial-card {
+    padding: 3rem 2rem;
+  }
+}

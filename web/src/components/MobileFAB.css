@@ -1,0 +1,38 @@
+.mobile-fab {
+  display: none; /* Hidden by default on desktop */
+}
+
+@media (max-width: 768px) {
+  .mobile-fab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.4);
+    cursor: pointer;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease-out;
+  }
+
+  .mobile-fab.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .mobile-fab:active {
+    transform: scale(0.95);
+  }
+}

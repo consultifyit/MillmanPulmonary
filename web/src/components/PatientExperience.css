@@ -1,0 +1,328 @@
+.experience-section {
+  background-color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-layout {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+}
+
+.experience-content {
+  flex: 1;
+}
+
+.experience-description {
+  margin-bottom: 4rem;
+  font-size: 1.2rem;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+  border-left: 2px solid transparent;
+}
+
+.experience-item:hover {
+  background-color: var(--color-background);
+  border-left-color: var(--color-accent);
+}
+
+.experience-icon {
+  color: var(--color-accent);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.experience-item-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.experience-item-desc {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.experience-visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* UI Abstraction - Liquid Glass */
+.glass-panel {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(161, 98, 7, 0.15), transparent);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.panel-header {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.panel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.panel-dot.red { background-color: #ef4444; }
+.panel-dot.yellow { background-color: #f59e0b; }
+.panel-dot.green { background-color: #10b981; }
+
+.panel-body {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.mock-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-md);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.payment-placeholders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(30, 58, 138, 0.15);
+}
+
+.mobile-wallets {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mock-pay-btn {
+  flex: 1;
+  width: 100%;
+  height: 44px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.mock-pay-btn.credit-card-pay {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.mock-pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mock-pay-btn.apple-pay {
+  background-color: #000;
+  color: white;
+}
+
+.mock-pay-btn.google-pay {
+  background-color: #fff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+}
+
+.pay-logo {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.payment-subtext {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(30, 58, 138, 0.5);
+  margin-top: 0.25rem !important;
+  font-family: var(--font-body);
+}
+
+.wallet-mock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: overlayFadeIn 0.3s forwards ease-out;
+}
+
+.wallet-mock-overlay.apple-theme {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.wallet-mock-overlay.google-theme {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.wallet-prompt {
+  text-align: center;
+  animation: popIn 0.4s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.side-button-indicator {
+  width: 6px;
+  height: 40px;
+  background: white;
+  border-radius: 4px;
+  position: absolute;
+  right: 15px;
+  top: 30%;
+  animation: pulseButton 1s infinite;
+}
+
+.fingerprint-indicator {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #4285F4;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.fingerprint-indicator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: rgba(66, 133, 244, 0.2);
+  border-radius: 50%;
+  animation: pulseCircle 1.5s infinite;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulseButton {
+  0% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
+  100% { opacity: 0.3; transform: scaleY(1); }
+}
+
+@keyframes pulseCircle {
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+@media (max-width: 1024px) {
+  .experience-layout {
+    flex-direction: column;
+  }
+  
+  .experience-visual {
+    width: 100%;
+    margin-top: 4rem;
+  }
+}

@@ -1,0 +1,125 @@
+.compliance-section {
+  background-color: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  padding: 6rem 0;
+}
+
+.compliance-layout {
+  display: flex;
+  gap: 6rem;
+  align-items: flex-start;
+}
+
+.compliance-header {
+  flex: 1;
+  position: sticky;
+  top: 120px;
+}
+
+.compliance-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-top: 1.5rem;
+  max-width: 500px;
+}
+
+.compliance-grid {
+  flex: 1.5;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.compliance-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  transition: var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.compliance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-accent);
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+
+.compliance-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(5px);
+}
+
+.compliance-card:hover::before {
+  opacity: 1;
+}
+
+.compliance-icon {
+  color: var(--color-primary);
+  background: var(--color-background);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+}
+
+.compliance-card-title {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.compliance-card-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.compliance-card.interactive {
+  cursor: pointer;
+}
+
+.compliance-learn-more {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: var(--transition-fast);
+}
+
+.compliance-card:hover .compliance-learn-more {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+  .compliance-layout {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .compliance-header {
+    position: relative;
+    top: 0;
+  }
+}
