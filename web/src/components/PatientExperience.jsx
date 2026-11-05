@@ -128,7 +128,7 @@ const PatientExperience = () => {
                     </div>
                   </div>
                 )}
-                <p className="payment-subtext">Secure payments powered by Square</p>
+                <p className="payment-subtext">Demo only: no payment is taken. The live version uses Square.</p>
               </div>
 
               {paymentMethod === 'apple' && (

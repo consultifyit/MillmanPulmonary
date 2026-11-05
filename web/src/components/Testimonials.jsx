@@ -6,22 +6,22 @@ const Testimonials = () => {
   // In a real deployment, these would be fetched dynamically via the Google Places API or an embed widget
   const [reviews] = React.useState([
     {
-      author_name: "Sarah T.",
+      author_name: "Sample review",
       rating: 5,
       text: "Dr. Millman is exactly what you hope for in a physician. He took the time to explain my test results in a way I could actually understand and put together a plan that finally gave me relief from my chronic cough.",
-      time_description: "2 months ago"
+      time_description: "Placeholder text"
     },
     {
-      author_name: "James M.",
+      author_name: "Sample review",
       rating: 5,
       text: "The office environment is so calming, and the staff is incredibly professional. Dr. Millman's bedside manner is unmatched. I felt heard, respected, and expertly cared for.",
-      time_description: "3 months ago"
+      time_description: "Placeholder text"
     },
     {
-      author_name: "Robert K.",
+      author_name: "Sample review",
       rating: 5,
       text: "After struggling with sleep apnea for years, Dr. Millman's comprehensive approach changed my life. I finally have energy during the day. Highly recommend his practice.",
-      time_description: "5 months ago"
+      time_description: "Placeholder text"
     }
   ]);
 
@@ -29,19 +29,19 @@ const Testimonials = () => {
     <section className="section testimonials-section">
       <div className="container">
         <div className="section-header text-center">
-          <h2 className="section-title">Patient Stories</h2>
+          <h2 className="section-title">Patient Stories <span style={{ fontSize: '0.5em', verticalAlign: 'middle', opacity: 0.7 }}>(sample)</span></h2>
           
           <div className="google-reviews-badge">
             <div className="google-score-row">
               <span className="google-g">G</span>
-              <span className="google-score">5.0</span>
+              <span className="google-score">Google Reviews</span>
               <div className="google-stars">
                 {[1, 2, 3, 4, 5].map(star => (
                   <Star key={star} size={24} fill="#FFC107" color="#FFC107" />
                 ))}
               </div>
             </div>
-            <p className="google-count">Based on 150+ verified Google Reviews</p>
+            <p className="google-count">Demo layout: the live site shows the practice's real Google reviews here</p>
           </div>
         </div>
 
@@ -75,9 +75,6 @@ const Testimonials = () => {
           ))}
         </div>
         
-        <div className="text-center" style={{ marginTop: '4rem' }}>
-          <a href="#" className="btn btn-secondary google-cta-btn">Read More on Google</a>
-        </div>
       </div>
     </section>
   );

@@ -24,15 +24,15 @@ const LeadCaptureForm = ({ onSuccess }) => {
     return (
       <div className="success-state">
         <CheckCircle size={64} className="success-icon" />
-        <h3>Request Received</h3>
-        <p>Thank you for reaching out. Our team will contact you shortly to confirm your appointment details.</p>
+        <h3>Demo only: nothing was sent</h3>
+        <p>This is a concept design by ConsultifyIT. Your details were not sent or stored. To book with Dr. Millman, please contact his office directly.</p>
         <button className="btn btn-secondary" onClick={() => setIsSubmitted(false)}>Submit Another</button>
       </div>
     );
   }
 
   return (
-    <form className="lead-form" onSubmit={handleSubmit}>
+    <form className="lead-form" method="post" action="#" onSubmit={handleSubmit}>
       <div className="form-row">
         <div className="form-group">
           <label htmlFor="firstName">First Name</label>
@@ -76,7 +76,7 @@ const LeadCaptureForm = ({ onSuccess }) => {
         )}
       </button>
       <p className="form-disclaimer">
-        Your information is completely secure and will only be used to contact you regarding your appointment.
+        Demo form: nothing you enter here is sent or stored.
       </p>
     </form>
   );

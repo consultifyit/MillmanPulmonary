@@ -4,9 +4,9 @@ import './Trust.css';
 const Trust = () => {
   const stats = [
     { value: "25+", label: "Years Experience" },
-    { value: "10k+", label: "Patients Treated" },
-    { value: "4.9/5", label: "Patient Rating" },
-    { value: "3", label: "Hospital Affiliations" }
+    { value: "Top Doctor", label: "Hour Detroit Magazine" },
+    { value: "2", label: "Clinic Locations" },
+    { value: "2", label: "Hospital Affiliations" }
   ];
 
   return (
@@ -27,9 +27,8 @@ const Trust = () => {
           </p>
           <div className="affiliation-logos">
             {/* Placeholder for hospital logos */}
-            <div className="logo-placeholder">Corewell Health</div>
-            <div className="logo-placeholder">Henry Ford Hospital</div>
-            <div className="logo-placeholder">William Beaumont</div>
+            <div className="logo-placeholder">Corewell Health William Beaumont</div>
+            <div className="logo-placeholder">DMC Harper University Hospital</div>
           </div>
         </div>
       </div>
