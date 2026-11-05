@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .logo {
@@ -31,6 +32,8 @@
   color: var(--color-primary);
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .logo-accent {
@@ -41,7 +44,7 @@
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: clamp(1.5rem, 2.5vw, 3rem);
   align-items: center;
 }
 
@@ -53,6 +56,7 @@
   letter-spacing: 0.1em;
   color: var(--color-text-main);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -77,7 +81,12 @@
 .desktop-actions {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.desktop-actions .btn {
+  white-space: nowrap;
 }
 
 .header-phone {
@@ -88,6 +97,7 @@
   font-weight: 500;
   color: var(--color-primary);
   font-size: 1rem;
+  white-space: nowrap;
 }
 
 .header-phone:hover {
@@ -106,7 +116,19 @@
   cursor: pointer;
 }
 
-@media (max-width: 992px) {
+/* Narrower desktops: keep the phone as an icon so the nav fits on one line */
+@media (max-width: 1439px) {
+  .header-phone span {
+    display: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 1199px) {
   .nav-links {
     position: absolute;
     top: 100%;

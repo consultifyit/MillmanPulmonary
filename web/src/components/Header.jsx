@@ -53,7 +53,7 @@ const Header = () => {
         </nav>
 
         <div className="desktop-actions">
-          <a href="tel:2485550199" className="header-phone"><Phone size={18} /> <span>(248) 555-0199</span></a>
+          <a href="tel:2485550199" className="header-phone" aria-label="Call (248) 555-0199" title="(248) 555-0199"><Phone size={18} /> <span>(248) 555-0199</span></a>
           <button className="btn btn-primary">Book Appointment</button>
         </div>
 
